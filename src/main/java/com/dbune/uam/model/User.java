@@ -16,10 +16,6 @@ public class User extends AbstractEntity {
 
     final static Long serialVersionUID = 1L;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
-
     @Column(nullable = false)
     private String username;
 
