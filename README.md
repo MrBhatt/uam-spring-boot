@@ -7,3 +7,5 @@ You will find UserController, UserService, User (model) and UserRepository to ac
 *Uses gradle as build tool*
 
 Download repo and `gradle bootRun`
+
+**switch to db_authentication_jpa branch for authentication using database via spring-data-jpa**
