@@ -12,6 +12,8 @@ import lombok.Data;
 @Data
 public class AbstractEntity {
 
+    final static Long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
