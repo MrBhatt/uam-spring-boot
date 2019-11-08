@@ -1,7 +1,6 @@
 
 package com.dbune.uam.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.dbune.uam.model.User;
@@ -20,7 +19,6 @@ public class UserService implements UserDetailsService {
 
     public List<User> getUsers() {
         return userRepository.findAll();
-        // return userRepository.findAll();
     }
 
     public User getUser(long id) {
@@ -29,7 +27,6 @@ public class UserService implements UserDetailsService {
         dummyUser.setFirstName("Dow");
         dummyUser.setLastName("John ");
         return dummyUser;
-        // return userRepository.findById(id);
     }
 
     @Override
