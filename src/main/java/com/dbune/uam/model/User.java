@@ -7,6 +7,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -18,6 +19,7 @@ import lombok.Data;
 @Entity
 public class User extends AbstractEntity implements UserDetails {
 
+    @Id
     @Column(nullable = false)
     private String username;
 
@@ -30,30 +32,22 @@ public class User extends AbstractEntity implements UserDetails {
     @Column(nullable = false)
     private String lastName;
 
+    @Column(nullable = false, columnDefinition = "TINYINT(1)")
+    private boolean enabled;
+
+    @Column(nullable = false, columnDefinition = "TINYINT(1)")
+    private boolean accountNonExpired;
+
+    @Column(nullable = false, columnDefinition = "TINYINT(1)")
+    private boolean accountNonLocked;
+
+    @Column(nullable = false, columnDefinition = "TINYINT(1)")
+    private boolean credentialsNonExpired;
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
         authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
         return authorities;
-    }
-
-    @Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return true;
     }
 }

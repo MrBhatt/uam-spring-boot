@@ -23,7 +23,7 @@ public class UserService implements UserDetailsService {
 
     public User getUser(long id) {
         User dummyUser = new User();
-        dummyUser.setId(321);
+        dummyUser.setUsername("user Down");
         dummyUser.setFirstName("Dow");
         dummyUser.setLastName("John ");
         return dummyUser;
@@ -32,6 +32,8 @@ public class UserService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userRepository.findByUsername(username);
+        System.out.println(user.getFirstName());
+        System.out.println(user.isEnabled());
         if (user != null) {
             return user;
         }
