@@ -25,4 +25,4 @@ The endpoints defined in the UserController are secured via basic auth strategy 
 2. Add basic authorization header (with the username and the decoded password(not in bcrypt format)) to your http request (using postman/curl etc). The request should succeed now (http status 200 OK)
 
 ## Remember
-Once configured and executing succesfully as per created users, groups and authorities, remember to change the `spring.jpa.hibernate.ddl-auto` setting in application.properties to no recreate database on each run. That is only for development and testing purposes
+Once configured and executing succesfully as per created users, authorities, remember to change the `spring.jpa.hibernate.ddl-auto` setting in application.properties to no recreate database on each run. That is only for development and testing purposes
