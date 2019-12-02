@@ -18,7 +18,7 @@ The endpoints defined in the UserController are secured via basic auth strategy 
 1. Download / clone repo
 2. change database details in application.properties
 3. `gradle bootRun` - this will also create a new database - based on the `spring.jpa.hibernate.ddl-auto` setting in application.prooerties (set as create-drop in this repo)
-3. create a record in database for user (enter username, bcrypted password, add flags for enabled etc -refer to fields in User entity)
+3. create appropriate records in database for user,role,privilege and other fields. Example: for user table enter username, bcrypted password, add flags for enabled etc -refer to fields in User entity
 
 ## Testing results: 
 1. Access `http://localhost:8080/v1/users` without any other authentication information - you should recieve 403 Forbidden http status code in response
